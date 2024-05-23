@@ -3,7 +3,7 @@
 #include <regex>
 using namespace std;
 
-bool verifyEmail(string str1)
+bool verifyEmail(string email)
 {
     /**********************************************************
     * 
@@ -16,5 +16,5 @@ bool verifyEmail(string str1)
     ***********************************************************/
     regex expression("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
 
-    return regex_match(str1, expression);
+    return regex_match(email, expression);
 }

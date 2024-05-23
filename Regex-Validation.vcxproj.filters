@@ -21,5 +21,8 @@
     <ClCompile Include="VerifyEmail.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VerifyPassword.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

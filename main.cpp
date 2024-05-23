@@ -3,7 +3,8 @@
 #include <regex>
 using namespace std;
 
-bool verifyEmail(string str1);
+bool verifyEmail(string email);
+bool verifyPassword(string password);
 
 int main()
 { 
@@ -12,12 +13,18 @@ int main()
     char   selection;
     selection = 'Y';
     
-    while (selection == 'Y')
+    while (toupper(selection) == 'Y')
     {
         cout << "Enter your email: ";
         getline(cin, email);
+        cout << endl;
 
-        cout << "Email: " << email << endl;
+        cout << "Enter your password: ";
+        getline(cin, password);
+        cout << endl;
+
+        /*cout << "Email: " << email << endl;
+        cout << "Password: " << password << endl;*/
 
         if (verifyEmail(email))
         {
@@ -27,9 +34,14 @@ int main()
         {
             cout << email << " is not valid.";
         }
-        cout << endl << endl;
+        cout << endl;
+        if (verifyPassword(password))
+        {
+            cout << password << " is a valid password.\n";
+        }
+        cout << endl;
 
-        cout << "Would you like to validate another email? (Y / N): ";
+        cout << "Would you like to validate another account? (Y / N): ";
         cin.get(selection);
         cin.ignore();
         cout << endl;
@@ -41,20 +53,37 @@ int main()
 }
 /* ---- OUTPUT ---------------
 Enter your email: cabo9123@yahoo.com
-Email: cabo9123@yahoo.com
+
+Enter your password: discoDancing9872364
+
 cabo9123@yahoo.com is a valid email.
 
-Would you like to validate another email? (Y / N): Y
+        < Your password needs a special character! >
+
+
+Would you like to validate another account? (Y / N): Y
 
 Enter your email: berf1@saddleback.edu
-Email: berf1@saddleback.edu
+
+Enter your password: computersciencenerd_
+
 berf1@saddleback.edu is a valid email.
 
-Would you like to validate another email? (Y / N): Y
+        < Your password needs a capital letter! >
+
+
+        < Your password needs a number! >
+
+
+Would you like to validate another account? (Y / N): y
 
 Enter your email: 123%&*@a*Tw/.coolaid
-Email: 123%&*@a*Tw/.coolaid
-123%&*@a*Tw/.coolaid is not valid.
 
-Would you like to validate another email? (Y / N): n
+Enter your password: garbageEater8347!
+
+123%&*@a*Tw/.coolaid is not valid.
+garbageEater8347! is a valid password.
+
+Would you like to validate another account? (Y / N): n
+
 */
